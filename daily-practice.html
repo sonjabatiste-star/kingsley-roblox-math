@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Weekly Roblox Math Practice</title>
 
+<!-- ✅ FIXED GOOGLE FONT LINK -->
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
@@ -80,63 +81,46 @@ input{
 
 <script>
 const practice = {
-  Sunday: {
-    warmup:["What is 10 more than 34?",44],
-    add:["47 + 26",73],
-    pv:["Value of the 6 in 362?",60]
-  },
-  Monday: {
-    warmup:["What is 10 less than 58?",48],
-    add:["38 + 45",83],
-    pv:["Value of the 4 in 248?",40]
-  },
-  Tuesday: {
-    warmup:["What is 10 more than 71?",81],
-    add:["56 + 27",83],
-    pv:["Value of the 7 in 374?",70]
-  },
-  Wednesday: {
-    warmup:["What is 10 less than 92?",82],
-    add:["64 + 18",82],
-    pv:["Value of the 5 in 451?",50]
-  },
-  Thursday: {
-    warmup:["What is 10 more than 49?",59],
-    add:["29 + 36",65],
-    pv:["Value of the 3 in 634?",30]
-  },
-  Friday: {
-    warmup:["What is 10 less than 67?",57],
-    add:["72 + 19",91],
-    pv:["Value of the 8 in 189?",80]
-  },
-  Saturday: {
-    warmup:["What is 10 more than 85?",95],
-    add:["48 + 35",83],
-    pv:["Value of the 2 in 523?",20]
-  }
+  Sunday:{warmup:["10 more than 34?",44],add:["47 + 26",73],pv:["Value of 6 in 362?",60]},
+  Monday:{warmup:["10 less than 58?",48],add:["38 + 45",83],pv:["Value of 4 in 248?",40]},
+  Tuesday:{warmup:["10 more than 71?",81],add:["56 + 27",83],pv:["Value of 7 in 374?",70]},
+  Wednesday:{warmup:["10 less than 92?",82],add:["64 + 18",82],pv:["Value of 5 in 451?",50]},
+  Thursday:{warmup:["10 more than 49?",59],add:["29 + 36",65],pv:["Value of 3 in 634?",30]},
+  Friday:{warmup:["10 less than 67?",57],add:["72 + 19",91],pv:["Value of 8 in 189?",80]},
+  Saturday:{warmup:["10 more than 85?",95],add:["48 + 35",83],pv:["Value of 2 in 523?",20]}
 };
 
 function openDay(day){
   const d = practice[day];
-  const box = document.getElementById('lesson');
+  const box = document.getElementById("lesson");
   box.style.display = "block";
   box.innerHTML = `
     <h2>${day} – 15‑Minute Practice</h2>
 
     <p><strong>Warm‑Up:</strong> ${d.warmup[0]}</p>
-    <input type="number" id="a1">
+    <input id="a1" type="number">
     <button onclick="check('a1', ${d.warmup[1]}, 'r1')">Check</button>
     <div id="r1" class="result"></div>
 
     <p><strong>Addition:</strong> ${d.add[0]}</p>
-    <input type="number" id="a2">
+    <input id="a2" type="number">
     <button onclick="check('a2', ${d.add[1]}, 'r2')">Check</button>
     <div id="r2" class="result"></div>
 
     <p><strong>Place Value:</strong> ${d.pv[0]}</p>
-    <input type="number" id="a3">
+    <input id="a3" type="number">
     <button onclick="check('a3', ${d.pv[1]}, 'r3')">Check</button>
     <div id="r3" class="result"></div>
 
-    <p>✅ Practice complete! Great job today.</p>
+    <p>✅ Practice complete! Amazing work.</p>
+  `;
+}
+
+function check(id, correct, resultId){
+  const val = document.getElementById(id).value;
+  const res = document.getElementById(resultId);
+
+  if(val === ""){
+    res.textContent = "Type an answer first!";
+    res.style.color = "#ffd43b";
+  } else if(Number(val) === correct){
