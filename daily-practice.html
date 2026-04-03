@@ -124,3 +124,14 @@ function check(id, correct, resultId){
     res.textContent = "Type an answer first!";
     res.style.color = "#ffd43b";
   } else if(Number(val) === correct){
+    res.textContent = "✅ Correct!";
+    res.style.color = "#8ce99a";
+  } else {
+    res.textContent = "❌ Try again!";
+    res.style.color = "#ff6b6b";
+  }
+}
+</script>
+
+</body>
+</html>
