@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Roblox Weekly Math Practice</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body{background:#0a0f1a;color:white;font-family:'Nunito',sans-serif;margin:0}
+.container{max-width:900px;margin:auto;padding:24px}
+h1{font-family:'Fredoka One'}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{background:#111827;border:2px solid #1e2d40;border-radius:14px;padding:18px}
+button{
+  width:100%;
+  font-family:'Fredoka One';
+  padding:14px;border-radius:24px;
+  border:none;background:#1c7ed6;color:white;
+  cursor:pointer;font-size:1.1rem
+}
+button:hover{filter:brightness(1.1)}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>📅 Weekly Roblox Math Practice</h1>
+<p>15 minutes per day • Addition & Place Value only</p>
+
+<div class="grid">
+<button onclick="openDay('Sunday')">Sunday</button>
+<button onclick="openDay('Monday')">Monday</button>
+<button onclick="openDay('Tuesday')">Tuesday</button>
+<button onclick="openDay('Wednesday')">Wednesday</button>
+<button onclick="openDay('Thursday')">Thursday</button>
+<button onclick="openDay('Friday')">Friday</button>
+<button onclick="openDay('Saturday')">Saturday</button>
+</div>
+
+<div class="card" id="lesson" style="margin-top:20px;display:none"></div>
+
+</div>
+
+<script>
+function openDay(day){
+  document.getElementById('lesson').style.display='block';
+  document.getElementById('lesson').innerHTML = `
+    <h2>🧠 ${day} – 15‑Minute Practice</h2>
+
+    <p><strong>Warm‑Up:</strong> What is 10 more than 47?</p>
+
+    <p><strong>Addition:</strong> 36 + 19 = ?</p>
+
+    <details><summary>Show Answer</summary>36 + 19 = 55</details>
+
+    <p><strong>Place Value:</strong> Value of the 4 in 342?</p>
+
+    <details><summary>Show Answer</summary>40</details>
+
+    <p>✅ You're done for today! Great job.</p>
+  `;
+}
+</script>
+
+</body>
+</html>
