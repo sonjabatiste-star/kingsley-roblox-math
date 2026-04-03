@@ -1,12 +1,90 @@
-
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>TEST PAGE</title>
-  </head>
-  <body style="background:black;color:white;font-family:sans-serif">
-    <h1>✅ TEST PAGE WORKS</h1>
-    <p>If you see this, GitHub Pages is working.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kingsley's Roblox Math Quest</title>
+
+  <!-- ✅ CORRECT GOOGLE FONT LINK -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: #0a0f1a;
+      color: white;
+      font-family: 'Nunito', sans-serif;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 24px;
+    }
+    h1, h2 {
+      font-family: 'Fredoka One', cursive;
+    }
+    .card {
+      background: #111827;
+      border: 2px solid #1e2d40;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    button {
+      font-family: 'Fredoka One', cursive;
+      padding: 10px 22px;
+      border-radius: 24px;
+      border: none;
+      cursor: pointer;
+      background: #f59f00;
+      margin-top: 10px;
+    }
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #8ce99a;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="card">
+      <h1>🎮 Roblox Math Quest</h1>
+      <p>Mission: Master Addition with Regrouping</p>
+    </div>
+
+    <div class="card">
+      <h2>🧠 Warm‑Up</h2>
+      <p>How many sides does a square have?</p>
+      <button onclick="show(0)">Show Answer</button>
+      <div class="answer">✅ 4 sides</div>
+    </div>
+
+    <div class="card">
+      <h2>🧱 Regrouping Example</h2>
+      <p>27 + 35 = ?</p>
+      <button onclick="show(1)">Show Solution</button>
+      <div class="answer">
+        7 + 5 = 12 → carry 1<br>
+        2 + 3 + 1 = 6<br>
+        ✅ Answer: 62
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🏆 Quest Complete!</h2>
+      <p>You just leveled up in Roblox Math Quest!</p>
+    </div>
+
+  </div>
+
+  <script>
+    function show(i) {
+      document.querySelectorAll('.answer')[i].style.display = 'block';
+    }
+  </script>
+</body>
 </html>
