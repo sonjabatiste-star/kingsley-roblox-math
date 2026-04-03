@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Roblox Daily Math Practice</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito&display=swap" rel="stylesheet">
+
+<style>
+body{background:#0a0f1a;color:white;font-family:'Nunito';margin:0}
+.container{max-width:700px;margin:auto;padding:20px}
+.card{background:#111827;border:2px solid #1e2d40;border-radius:14px;padding:18px;margin-bottom:14px}
+h1{font-family:'Fredoka One'}
+.answer{display:none;color:#8ce99a;margin-top:8px}
+button{font-family:'Fredoka One';padding:6px 18px;border-radius:18px;border:none;background:#f59f00}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="card">
+<h1>⚡ Roblox Daily Math Boost (15 min)</h1>
+<p>Warm‑up + Practice</p>
+</div>
+
+<div class="card">
+<p>Warm‑up: What is 10 more than 47?</p>
+<button onclick="show(0)">Answer</button>
+<div class="answer">57</div>
+</div>
+
+<div class="card">
+<p>Add: 36 + 19</p>
+<button onclick="show(1)">Answer</button>
+<div class="answer">55</div>
+</div>
+
+<div class="card">
+<p>Place value: Value of 4 in 342?</p>
+<button onclick="show(2)">Answer</button>
+<div class="answer">40</div>
+</div>
+
+</div>
+
+<script>
+function show(i){
+  document.querySelectorAll('.answer')[i].style.display='block';
+}
+</script>
+</body>
+</html>
