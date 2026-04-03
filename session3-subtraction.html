@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Roblox Math Quest – Subtraction</title>
+
+https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap
+
+<style>
+body{background:#0a0f1a;color:white;font-family:'Nunito',sans-serif;margin:0}
+.container{max-width:900px;margin:auto;padding:24px}
+h1,h2{font-family:'Fredoka One'}
+.card{background:#111827;border:2px solid #1e2d40;border-radius:14px;padding:20px;margin-bottom:16px}
+.answer{display:none;color:#8ce99a;margin-top:8px}
+button{font-family:'Fredoka One';padding:8px 20px;border-radius:20px;border:none;background:#f59f00}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="card">
+<h1>➖ Roblox Math Quest – Subtraction</h1>
+<p>Mission: Understand what subtraction means</p>
+</div>
+
+<div class="card">
+<h2>🧠 What Is Subtraction?</h2>
+<p>Subtraction means taking away or finding the difference.</p>
+</div>
+
+<div class="card">
+<p>There are 15 Roblox coins. Kingsley spends 6.</p>
+<p>How many coins are left?</p>
+<button onclick="show(0)">Show Answer</button>
+<div class="answer">15 − 6 = 9</div>
+</div>
+
+<div class="card">
+<p>24 − 8 = ?</p>
+<button onclick="show(1)">Show Answer</button>
+<div class="answer">24 − 8 = 16</div>
+</div>
+
+</div>
+
+<script>
+function show(i){
+  document.querySelectorAll('.answer')[i].style.display='block';
+}
+</script>
+
+</body>
+</html>
