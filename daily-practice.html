@@ -1,53 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Roblox Daily Math Practice</title>
+<title>Weekly Roblox Math Practice</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 body{background:#0a0f1a;color:white;font-family:'Nunito';margin:0}
-.container{max-width:700px;margin:auto;padding:20px}
-.card{background:#111827;border:2px solid #1e2d40;border-radius:14px;padding:18px;margin-bottom:14px}
-h1{font-family:'Fredoka One'}
-.answer{display:none;color:#8ce99a;margin-top:8px}
-button{font-family:'Fredoka One';padding:6px 18px;border-radius:18px;border:none;background:#f59f00}
+.container{max-width:900px;margin:auto;padding:24px}
+h1,h2{font-family:'Fredoka One'}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+button{
+  width:100%;
+  font-family:'Fredoka One';
+  padding:14px;
+  font-size:1.1rem;
+  border-radius:24px;
+  border:none;
+  background:#1c7ed6;
+  color:white;
+  cursor:pointer
+}
+button:hover{filter:brightness(1.1)}
+.card{
+  background:#111827;
+  border:2px solid #1e2d40;
+  border-radius:14px;
+  padding:18px;
+  margin-top:20px
+}
+.answer{display:none;color:#8ce99a;margin-top:8px;font-weight:bold}
+details{margin-top:6px}
 </style>
 </head>
 
 <body>
 <div class="container">
 
-<div class="card">
-<h1>⚡ Roblox Daily Math Boost (15 min)</h1>
-<p>Warm‑up + Practice</p>
+<h1>📅 Weekly Roblox Math Practice</h1>
+<p>15 minutes per day • Addition & Place Value</p>
+
+<div class="grid">
+<button onclick="openDay('Sunday')">Sunday</button>
+<button onclick="openDay('Monday')">Monday</button>
+<button onclick="openDay('Tuesday')">Tuesday</button>
+<button onclick="openDay('Wednesday')">Wednesday</button>
+<button onclick="openDay('Thursday')">Thursday</button>
+<button onclick="openDay('Friday')">Friday</button>
+<button onclick="openDay('Saturday')">Saturday</button>
 </div>
 
-<div class="card">
-<p>Warm‑up: What is 10 more than 47?</p>
-<button onclick="show(0)">Answer</button>
-<div class="answer">57</div>
-</div>
-
-<div class="card">
-<p>Add: 36 + 19</p>
-<button onclick="show(1)">Answer</button>
-<div class="answer">55</div>
-</div>
-
-<div class="card">
-<p>Place value: Value of 4 in 342?</p>
-<button onclick="show(2)">Answer</button>
-<div class="answer">40</div>
-</div>
+<div class="card" id="lesson" style="display:none"></div>
 
 </div>
 
 <script>
-function show(i){
-  document.querySelectorAll('.answer')[i].style.display='block';
+const practice = {
+  Sunday: {
+    warmup: "What is 10 more than 34?",
+    warmupA: "44",
+    add: "47 + 26",
+    addA: "73",
+    pv: "Value of the 6 in 362?",
+    pvA: "60"
+  },
+  Monday: {
+    warmup: "What is 10 less than 58?",
+    warmupA: "48",
+    add: "38 + 45",
+    addA: "83",
+    pv: "Value of the 4 in 248?",
+    pvA: "40"
+  },
+  Tuesday: {
+    warmup: "What is 10 more than 71?",
+    warmupA: "81",
+    add: "56 + 27",
+    addA: "83",
+    pv: "Value of the 7 in 374?",
+    pvA: "70"
+  },
+  Wednesday: {
+    warmup: "What is 10 less than 92?",
+    warmupA: "82",
+    add: "64 + 18",
+    addA: "82",
+    pv: "Value of the 5 in 451?",
+    pvA: "50"
+  },
+  Thursday: {
+    warmup: "What is 10 more than 49?",
+    warmupA: "59",
+    add: "29 + 36",
+    addA: "65",
+    pv: "Value of the 3 in 634?",
+    pvA: "30"
+  },
+  Friday: {
+    warmup: "What is 10 less than 67?",
+    warmupA: "57",
+    add: "72 + 19",
+    addA: "91",
+    pv: "Value of the 8 in 189?",
+    pvA: "80"
+  },
+  Saturday: {
+    warmup: "What is 10 more than 85?",
+    warmupA: "95",
+    add: "48 + 35",
+    addA: "83",
+    pv: "Value of the 2 in 523?",
+    pvA: "20"
+  }
+};
+
+function openDay(day){
+  const d = practice[day];
+  const box = document.getElementById('lesson');
+  box.style.display = 'block';
+  box.innerHTML = `
+    <h2>${day} – 15‑Minute Practice</h2>
+
+    <p><strong>Warm‑Up:</strong> ${d.warmup}</p>
+    <details><summary>Show Answer</summary>${d.warmupA}</details>
+
+    <p><strong>Addition:</strong> ${d.add}</p>
+    <details><summary>Show Answer</summary>${d.addA}</details>
+
+    <p><strong>Place Value:</strong> ${d.pv}</p>
+    <details><summary>Show Answer</summary>${d.pvA}</details>
+
+    <p>✅ Practice complete! See you tomorrow.</p>
+  `;
 }
 </script>
+
 </body>
 </html>
