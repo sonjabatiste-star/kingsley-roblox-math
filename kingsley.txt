@@ -1,0 +1,23 @@
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kingsley's Roblox Quest: Addition Mission 🧱</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ===== COLORS & BASE ===== */
+:root {
+  --red:#e03131;--blue:#1c7ed6;--green:#2f9e44;
+  --yellow:#f59f00;--orange:#e8590c;--purple:#7048e8;
+  --cyan:#0c8599;--dark:#0a0f1a;--card:#111827;
+  --border:#1e2d40;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--dark);
+  font-family:'Nunito',sans-serif;
+  min-height:100vh;color:#fff;
+}
+</style>
+</head>
